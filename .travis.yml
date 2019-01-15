@@ -1,0 +1,11 @@
+language: rust
+rust:
+- nightly
+cache: cargo
+before_script:
+# - cargo install --force cargo-make
+- rustup component add rustfmt
+script:
+- cargo fmt --all -- --check
+- cargo test --verbose --all
+# - cargo make
